@@ -110,24 +110,25 @@ nav {
         position: relative;
         text-transform: uppercase;
 
-        &::before {
-          content: attr(data-item);
-          transition: 0.5s;
-          color: black;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          width: 0;
-          overflow: hidden;
-        }
+        // &::before {
+        //   content: attr(data-item);
+        //   transition: 0.5s;
+        //   color: black;
+        //   position: absolute;
+        //   top: 0;
+        //   bottom: 0;
+        //   left: 0;
+        //   right: 0;
+        //   width: 0;
+        //   overflow: hidden;
+        // }
 
         &:hover {
-          &::before {
-            width: 100%;
-            transition: all 0.5s ease-in-out;
-          }
+        //   &::before {
+        //     width: 100%;
+        //     transition: all 0.5s ease-in-out;
+        //   }
+          background: black;
         }
       }
     }
