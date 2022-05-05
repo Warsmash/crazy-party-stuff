@@ -1,0 +1,7 @@
+<%= simple_form_for [ @attraction, @user ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :one_liner %>
+  <%= f.input :description %>
+
+  <%= f.submit "Submit attraction", class: "btn btn-primary" %>
+<% end %>
