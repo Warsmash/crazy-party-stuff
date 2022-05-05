@@ -1,5 +1,5 @@
 class AttractionsController < ApplicationController
   def index
-    @attractions = Attraction.all
+    @attractions = policy_scope(Attraction).order(created_at: :desc)
   end
 end
