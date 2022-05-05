@@ -14,6 +14,10 @@ class AttractionsController < ApplicationController
     @attraction.save
   end
 
+  def show
+    # @attraction = Attraction.find_by()
+  end
+
   private
 
   def attraction_params
