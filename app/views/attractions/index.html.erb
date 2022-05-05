@@ -1,0 +1,13 @@
+<h1>Crazy Party attractions</h1>
+
+<div class="card-behavior">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610973054332-47ba6d5350c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjYwfHxqdW1wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60);">
+    <% @attractions.each do |attraction| %>
+      <div class="card-content">
+        <h3 class="card-title"> <%= attraction.name %> </h3>
+        <p class="card-title"> <%= attraction.one_liner %> </p>
+        <a href="#" class="button">Learn More...</a>
+      </div>
+    <% end %>
+  </div>
+</div>
