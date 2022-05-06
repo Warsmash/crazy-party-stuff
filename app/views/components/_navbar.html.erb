@@ -37,7 +37,12 @@
     <form action="/action_page.php">
       <input type="text" placeholder="Email" name="email">
       <input type="text" placeholder="Password" name="psw">
+
+    <div class="btn-login">
+      <%= link_to new_user_session_path do %>
       <button type="submit">Login</button>
+      <% end %>
+    </div>
     </form>
     <%# <%= link_to new_user_session_path do %>
      <%# <p>LOGIN</p>
