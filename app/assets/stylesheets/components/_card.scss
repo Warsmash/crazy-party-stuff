@@ -1,0 +1,36 @@
+.attractions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  align-items: center;
+}
+
+@media(max-width: 992px) {
+  .attractions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .attractions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.attraction-card {
+  font-family: 'Roboto', sans-serif;
+  height: 200px;
+  color: white;
+  margin: auto;
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 1;
+  }
+}

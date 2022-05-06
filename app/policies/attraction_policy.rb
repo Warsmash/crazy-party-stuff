@@ -1,4 +1,5 @@
 class AttractionPolicy < ApplicationPolicy
+
   def update?
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
@@ -10,9 +11,8 @@ class AttractionPolicy < ApplicationPolicy
   end
 
   class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 end
