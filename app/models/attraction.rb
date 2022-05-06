@@ -1,6 +1,7 @@
 class Attraction < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
 
   # an attraction must be linked to a user
   validates_associated :user
