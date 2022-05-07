@@ -7,11 +7,11 @@
 
   <div class="card-behavior">
     <% @attractions.each do |attraction| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(attraction.photo.key) %>);">
         <div class="card-content">
           <h3 class="card-title"><%= attraction.name %></h3>
           <p class="card-body"><%= attraction.one_liner %></p>
-          <a href="#" class="button"><%= button_to "Learn More...", attractions_path %></a>
+          <%= link_to "Learn More...", attractions_path, class: 'button' %>
         </div>
       </div>
     <% end %>
