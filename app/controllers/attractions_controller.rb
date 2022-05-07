@@ -39,6 +39,6 @@ class AttractionsController < ApplicationController
   end
 
   def attraction_params
-    params.require(:attraction).permit(:name, :one_liner, :description)
+    params.require(:attraction).permit(:name, :one_liner, :description, :photo)
   end
 end
