@@ -47,7 +47,7 @@ class AttractionsController < ApplicationController
 
   def update
     authorize @attraction
-    @attraction.update
+    @attraction.update(attraction_params)
     redirect_to attraction_path(@attraction)
   end
 

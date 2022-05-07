@@ -15,6 +15,7 @@
           <h3> <%= link_to attraction.name, attraction_path(attraction) %> </h3>
           <p> <%= attraction.one_liner %> </p>
 
+          <%= link_to "Edit", edit_attraction_path(attraction)%>
           <%= link_to "Delete", attraction_path(attraction), method: :delete %>
         </div>
     <% end %>
