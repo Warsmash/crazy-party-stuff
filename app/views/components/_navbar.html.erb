@@ -7,21 +7,45 @@
 
 <%#  %>
 
-<div>HELLO</div>
-<p data-item='Crazy.Party.Stuff'>Crazy.Party.Stuff</p>
+<div class="upper">WELCOME</div>
+<p class="cps">Crazy.Party.Stuff</p>
 
-<section>
+<%# <section>
   <div>Let's party:</div>
   <nav>
     <ul class="menuItems">
       <li><a href='#' data-item='Home'>Home</a></li>
       <li><a href='#' data-item='About'>About</a></li>
-      <li><a href='#' data-item='Party!!'>Party!!</a></li>
+      <li><a href='#' data-item='Attractions'>Attractions</a></li>
       <li><a href='#' data-item='Contact'>Contact</a></li>
-      <li><a href='#' data-item='Connect'>Connect</a></li>
+      <li><a href='#' data-item='Login'>Login</a></li>
     </ul>
   </nav>
 
-</section>
+</section> %>
 
-<%#  %>
+<%# data-item="Crazy.Party.Stuff"  %>
+
+<div class="topnav">
+
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#attractions">Attractions</a>
+  <a href="#contact">Contact</a>
+
+  <div class="login-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Email" name="email">
+      <input type="text" placeholder="Password" name="psw">
+
+    <div class="btn-login">
+      <%= link_to new_user_session_path do %>
+      <button type="submit">Login</button>
+      <% end %>
+    </div>
+    </form>
+    <%# <%= link_to new_user_session_path do %>
+     <%# <p>LOGIN</p>
+    <% end %>
+  </div>
+</div>
