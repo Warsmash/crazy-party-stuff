@@ -16,7 +16,7 @@ class AttractionsController < ApplicationController
     @user = current_user
     @attraction.user = @user
     if @attraction.save
-      redirect_to attraction_path(@attraction)
+      redirect_to my_attractions_path
     else
       render :new
     end
@@ -27,16 +27,26 @@ class AttractionsController < ApplicationController
     @booking = Booking.new
   end
 
+  def destroy
+    @attraction = Attraction.find(params[:id])
+    authorize @attraction
+    @attraction.destroy
+    flash[:alert] = "Deletion performed"
+    redirect_to my_attractions_path
+  end
+
+  def user_attractions
+    @user = current_user
+    @user_attractions = Attraction.where(user: @user)
+    authorize @user_attractions
+  end
+
   private
 
   def set_attraction
     @attraction = Attraction.find(params[:id])
   end
 
-  def destroy
-    @attraction = Attraction.find(params[:id])
-    @attraction.destroy
-  end
 
   def attraction_params
     params.require(:attraction).permit(:name, :one_liner, :description)
