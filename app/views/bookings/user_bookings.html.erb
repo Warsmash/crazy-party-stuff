@@ -1,0 +1,14 @@
+<h1>
+  <% @bookings.each do |booking|%>
+   <tr>
+      <th><%= booking.start_date %></th>
+      <th><%= booking.end_date %></th>
+   </tr>
+  <% if booking.attraction.photo.attached? %>
+    <%= cl_image_tag booking.attraction.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+   <% end %>
+</h1>
+
+
+<%# montrer réservations %>

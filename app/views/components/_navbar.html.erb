@@ -34,18 +34,22 @@
   <a href="./contact">Contact</a>
 
   <div class="login-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Email" name="email">
-      <input type="text" placeholder="Password" name="psw">
+  <% if !user_signed_in? %>
 
-    <div class="btn-login">
-      <%= link_to new_user_session_path do %>
-      <button type="submit">Login</button>
-      <% end %>
-    </div>
-    </form>
+      <form action="/">
+        <input type="text" placeholder="Email" name="email">
+        <input type="text" placeholder="Password" name="psw">
+
+        <div class="btn-login">
+          <%= link_to new_user_session_path do %>
+          <button type="submit">Login</button>
+          <% end %>
+
+        </div>
+      </form>
     <%# <%= link_to new_user_session_path do %>
      <%# <p>LOGIN</p>
     <% end %>
+     <% end %>
   </div>
 </div>
