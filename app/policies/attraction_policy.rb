@@ -20,6 +20,10 @@ class AttractionPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def user_attractions?
+    record.user == user
+  end
+
   class Scope < Scope
     def resolve
       scope.all
