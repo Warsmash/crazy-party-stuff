@@ -71,3 +71,6 @@ gem 'pundit'
 
 # cloudinary to manage image upload and hosting
 gem 'cloudinary', '~> 1.16.0'
+
+# geocoding and maps
+gem "geocoder", '~> 1.7'
