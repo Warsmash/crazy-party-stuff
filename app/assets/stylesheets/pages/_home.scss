@@ -13,7 +13,6 @@
   padding: 100px ;
 }
 
-
 .banner h1 {
   margin: 0;
   color: white;
@@ -37,9 +36,8 @@
   display: flex;
   min-height: 100vh; /* emplacement de la card */
   line-height: 1.6; /* + le chiffre augmente;+ les cards descendent*/
-  background: #e2ecec;
+  background: #F4F4F4; /*couleur du background => à mettre ds le body */
   grid-row-gap: 40px;
-
   font-family: 'Roboto', sans-serif;
 }
 
@@ -47,10 +45,11 @@
 .card {
   color:whitesmoke; /*couleur du text */
   background-size: cover;
+  background-color: rgb(98, 185, 236);
   width: 45ch;
   height: 65ch;
   border-radius: 3%;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: transform 500ms ease;
   justify-content: space-around;
   padding: auto;
@@ -93,10 +92,9 @@
 .card:hover .card-title::after,
 .card:focus-within .card-title::after {
   transform: scaleX(1);
-
 }
 
-/* button*/
+/* BUTTON*/
 .button {
   cursor: pointer;
   display: inline-block;
@@ -104,14 +102,15 @@
   color: #fefefe;
   padding: 0.2em 1.25em;
   border-radius: 0.25rem;
+  transform-origin: left;
 }
 
 .button:hover,
 .button:focus {
   background-color: #3ea5fa;
   box-shadow: 0 0 5px #3ea5fa, 0 0 25px #3ea5fa, 0 0 50px #3ea5fa, 0 0 200px #3ea5fa;
+  transform-origin: left;
 }
-
 
 
 
@@ -144,7 +143,7 @@
 /*Glitch diff Browsers*/
 @media (hover) {
   .card-content {
-    transform: translateY(310%); /*Up and Down like a rollerCoaster */
+    transform: translateY(180%); /*Up and Down like a rollerCoaster */
     transition: transform  500ms ease;
 
   }
