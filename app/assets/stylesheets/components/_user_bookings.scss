@@ -1,0 +1,22 @@
+.book {
+  background: #F4F4F4;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date {
+  background: #F4F4F4;
+  color: black;
+  align-items: center;
+  font-size: 20px;
+}
+
+.attracname {
+  background: #F4F4F4;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+}
