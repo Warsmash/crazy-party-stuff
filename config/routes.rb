@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   # creating the 7 CRUD routes for the Attraction model
+
   resources :attractions do
     resources :bookings
   end
@@ -11,4 +12,5 @@ Rails.application.routes.draw do
   # aller dans bookings controller pour définir ci-dessus
   # récupérer bookings de ce user-là
   # loop dans view .each do
+
 end
