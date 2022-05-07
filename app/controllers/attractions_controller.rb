@@ -1,5 +1,6 @@
 class AttractionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_attraction, only: [:show, :edit, :update, :destroy]
 
   def index
     @attractions = policy_scope(Attraction).order(created_at: :desc)
@@ -23,8 +24,17 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    @attraction = Attraction.find(params[:id])
     @booking = Booking.new
+  end
+
+  def edit
+    authorize @attraction
+  end
+
+  def update
+    authorize @attraction
+    @attraction.update
+    redirect_to attraction_path(@attraction)
   end
 
   private
