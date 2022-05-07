@@ -9,14 +9,14 @@
     <% @attractions.each do |attraction| %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(attraction.photo.key) %>);">
         <div class="card-content">
-          <h3 class="card-title"><a href="./attractions/<%= attraction.id %>"><%= attraction.name %></a></h3>
+          <h3 class="card-title"><%= attraction.name %></h3>
           <p class="card-body"><%= attraction.one_liner %></p>
-          <%= link_to "Learn More...", attractions_path, class: 'button' %>
+          <%= link_to "Learn More...", attraction_path(attraction), class: 'button' %>
         </div>
       </div>
     <% end %>
   </div>
-  
+
 <div class="text-center">
   <a href="./attractions" class="btn btn-primary">Voir toutes les attractions</a>
 </div>
