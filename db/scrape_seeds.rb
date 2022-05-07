@@ -2,7 +2,7 @@
 require "open-uri"
 require "nokogiri"
 
-url = "https://over21partyrentals.com/products/crazy-stuff/page/5/"
+url = "https://over21partyrentals.com/products/crazy-stuff/page/4/"
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
