@@ -35,3 +35,11 @@
 <%# <%= link_to cocktail_path(@cocktail) do %>
   <%# <img src="cocktails.jpg" alt="Our cocktails" />
 <% end %>
+
+
+<%= simple_form_for [ @attraction, @booking ] do |f| %>
+  <%# <%= f.input :start_date, class: 'datepicker' %>
+  <%= f.input :start_date, input_html: { class: "datepicker"}, label: 'Start Date', placeholder: "#{Date.today}", required: true %>
+  <%= f.input :end_date, input_html: { class: "datepicker"}, label: 'End Date', placeholder: "#{Date.today}", required: true %>
+  <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>
