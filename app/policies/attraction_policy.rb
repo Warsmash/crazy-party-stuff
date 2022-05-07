@@ -12,8 +12,6 @@ class AttractionPolicy < ApplicationPolicy
 
   def update?
     record.user == user
-    # - record: the restaurant passed to the `authorize` method in controller
-    # - user:   the `current_user` signed in with Devise.
   end
 
   def destroy?
@@ -21,7 +19,7 @@ class AttractionPolicy < ApplicationPolicy
   end
 
   def user_attractions?
-    return true
+    true
   end
 
   class Scope < Scope

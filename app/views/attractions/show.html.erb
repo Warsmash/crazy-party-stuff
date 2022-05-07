@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -43,3 +44,4 @@
   <%= f.input :end_date, input_html: { class: "datepicker"}, label: 'End Date', placeholder: "#{Date.today}", required: true %>
   <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
+</div>

@@ -11,9 +11,12 @@
         <div class="card-content">
           <h3 class="card-title"><%= attraction.name %></h3>
           <p class="card-body"><%= attraction.one_liner %></p>
-          <%= link_to "Learn More...", attractions_path, class: 'button' %>
+          <%= link_to "Learn More...", attraction_path(attraction), class: 'button' %>
         </div>
       </div>
     <% end %>
-
   </div>
+
+<div class="text-center">
+  <a href="./attractions" class="btn btn-primary">Voir toutes les attractions</a>
+</div>
