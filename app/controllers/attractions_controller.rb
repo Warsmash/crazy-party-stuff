@@ -23,7 +23,8 @@ class AttractionsController < ApplicationController
   end
 
   def show
-    # @attraction = Attraction.find_by()
+    @attraction = Attraction.find(params[:id])
+    @booking = Booking.new
   end
 
   private
