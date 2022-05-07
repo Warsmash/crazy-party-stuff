@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   # creating the 7 CRUD routes for the Attraction model
   resources :attractions
+  
 end

@@ -32,6 +32,11 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
   end
 
+  def destroy
+    @attraction = Attraction.find(params[:id])
+    @attraction.destroy
+  end
+
   def attraction_params
     params.require(:attraction).permit(:name, :one_liner, :description)
   end
