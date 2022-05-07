@@ -4,4 +4,10 @@ class PagesController < ApplicationController
   def home
     @attractions = Attraction.all.sample(6)
   end
+
+  def about
+  end
+
+  def contact
+  end
 end
