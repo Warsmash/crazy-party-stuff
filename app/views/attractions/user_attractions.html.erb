@@ -8,14 +8,14 @@
     </a>
   </div>
 <% end %>
-<div class="attractions">
+<div class="card-behavior">
     <% @user_attractions.each do |attraction| %>
         <%  photo = attraction.photo && attraction.photo.key  ? attraction.photo.key : '' %>
-        <div class="attraction-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo, crop: :fill %>')">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo, crop: :fill %>')">
           <h3> <%= link_to attraction.name, attraction_path(attraction) %> </h3>
           <p> <%= attraction.one_liner %> </p>
 
-          <%= link_to "Edit", edit_attraction_path(attraction)%>
+          <%= link_to "Edit", edit_attraction_path(attraction), class: 'button'%>
           <%= link_to "Delete", attraction_path(attraction), method: :delete %>
         </div>
     <% end %>

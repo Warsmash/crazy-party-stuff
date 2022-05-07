@@ -1,5 +1,195 @@
-.attractions {
-  display: grid;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+// Specific CSS for your home-page
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 100px ;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner h1:hover {
+  color: #3ea5fa;
+  text-shadow: 0 0 5px #3ea5fa, 0 0 25px #3ea5fa, 0 0 50px #3ea5fa, 0 0 200px #3ea5fa;
+  font-weight: bolder;
+}
+
+
+.card-behavior {
+  padding: 40px 140px 140px 100px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+  min-height: 100vh; /* emplacement de la card */
+  line-height: 1.6; /* + le chiffre augmente;+ les cards descendent*/
+  background: #F4F4F4; /*couleur du background => à mettre ds le body */
+  grid-row-gap: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.card {
+  color:whitesmoke; /*couleur du text */
+  background-size: cover;
+  background-color: rgb(98, 185, 236);
+  width: 45ch;
+  height: 65ch;
+  border-radius: 3%;
+  overflow: hidden;
+  transition: transform 500ms ease;
+  justify-content: space-around;
+  padding: auto;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+}
+
+.card-content {
+  --padding: 0.5rem;
+  padding:var(--padding);
+  background: linear-gradient(to top left, transparent,rgba(0, 0, 0, 0));
+}
+
+.card-title {
+  position: relative;
+  width: fit-content; /* one line only or break */
+  font-family: 'Roboto', sans-serif;
+}
+
+/*underline */
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 1.5px;
+  left: calc(var(--padding) * -1);
+  bottom: -2px;
+  width: calc(100% + var(--padding));
+  background:#3ea5fa;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+
+/* lenght underline */
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+
+/* BUTTON*/
+.button {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #fefefe;
+  padding: 0.2em 1.25em;
+  border-radius: 0.25rem;
+  transform-origin: left;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #3ea5fa;
+  box-shadow: 0 0 5px #3ea5fa, 0 0 25px #3ea5fa, 0 0 50px #3ea5fa, 0 0 200px #3ea5fa;
+  transform-origin: left;
+}
+
+
+
+@media screen and (max-width: 1024px){
+  .card .card-content .card-title {
+    width: 33%;
+	}
+}
+
+@media screen and (max-width: 768px){
+  .card .card-content .card-title {
+    width: 50%;
+	}
+	.wrapper .header{
+    font-size: 16px;
+		height: 60px;
+	}
+}
+
+@media screen and (max-width: 568px){
+  .card .card-content .card-title {
+    width: 100%;
+	}
+	.wrapper .header{
+    font-size: 14px;
+	}
+}
+
+
+/*Glitch diff Browsers*/
+@media (hover) {
+  .card-content {
+    transform: translateY(180%); /*Up and Down like a rollerCoaster */
+    transition: transform  500ms ease;
+
+  }
+
+  /* fix glitch  => Firefox*/
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+
+  }
+
+  /* fix glitch  => Firefox*/
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+
+  }
+
+  .card-content > *:not(.card-title) {
+    transition: opacity 500ms linear;
+  }
+
+  .card:hover .card-content > *:not(.card-title) {
+    transition-delay: 1000ms;
+  }
+
+  .card-title::after{
+    transform: scaleX(0);
+  }
+}
+
+
+
+
+/* .attractions { */
+  /* padding: 40px 140px 140px 100px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex; */
+ /*  min-height: 100vh;  *//* emplacement de la card */
+  /* line-height: 1.6; */ /* + le chiffre augmente;+ les cards descendent*/
+  /* background: #F4F4F4; */ /*couleur du background => à mettre ds le body */
+  /* grid-row-gap: 40px;
+  font-family: 'Roboto', sans-serif; */ 
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   align-items: center;
@@ -18,7 +208,8 @@
 }
 
 .attraction-card {
-  font-family: 'Roboto', sans-serif;
+
+ /*  font-family: 'Roboto', sans-serif;
   height: 200px;
   color: white;
   margin: auto;
@@ -32,5 +223,5 @@
     font-size: 12px;
     font-weight: normal;
     opacity: 1;
-  }
-}
+  } */
+/*} */
