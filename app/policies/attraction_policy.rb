@@ -15,11 +15,11 @@ class AttractionPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+   record.user == user
   end
 
   def user_attractions?
-    record.user == user
+    true
   end
 
   class Scope < Scope

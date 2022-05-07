@@ -3,7 +3,7 @@
 
   <div class="attractions">
     <% @attractions.each do |attraction| %>
-      <div class="attraction-card" <% if @attraction.photo.attached? %>
+      <div class="attraction-card" <% if attraction.photo && attraction.photo.attached? %>
       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
       url('<%= cl_image_path attraction.photo.key, crop: :fill %>')" <% end %>>
         <h3> <%= link_to attraction.name, attraction_path(attraction) %>  </h3>

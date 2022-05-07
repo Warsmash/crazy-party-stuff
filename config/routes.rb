@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+  get "my_attractions", to: "attractions#user_attractions"
+
   # définir structure path : 1 user et récupérer ses bookings donc id user /:user_id/bookings
   # aller dans bookings controller pour définir ci-dessus
   # récupérer bookings de ce user-là
