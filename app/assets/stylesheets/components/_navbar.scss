@@ -61,9 +61,13 @@
 //   text-align: center;
 // }
 
+a {
+  text-decoration: none;
+}
+
 .cps {
   margin: 16px;
-  font-size: 96px;
+  font-size: 30px;
   color: #ccc;
   text-transform: uppercase;
   font-weight: 500;
