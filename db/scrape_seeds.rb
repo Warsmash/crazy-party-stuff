@@ -1,15 +1,25 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 require "open-uri"
 require "nokogiri"
 
-url = "https://over21partyrentals.com/products/crazy-stuff/page/4/"
+url = "https://over21partyrentals.com/products/crazy-stuff"
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
 articles = html_doc.search('article')
 
+Booking.destroy_all
+Attraction.destroy_all
+User.destroy_all
+
+User.create!(email: 'test@test.com', password: 'azerty')
+
 articles.each do |article|
   name = article.search(".product-title-loop").search('a').text
+  price = (rand(20) + 1) * 100
+  puts name, price
   one_liner = article.search("p").text.split('.').first
 
   show_url = article.search(".product-title-loop").search('a').attribute("href").value
@@ -19,16 +29,19 @@ articles.each do |article|
   unless show_doc.search('.side-image').search('img').first.attribute("src").nil?
     img_url = show_doc.search('.side-image').search('img').first.attribute("src").value
     file = URI.open(img_url)
-    description = show_doc.search('article').search('p').first.text
+    description = show_doc.search('article').search('p').first.text[0..450]
+    description = description.length < 15 ? 'lololololololololololol' : description
+    puts "\n\n\n\n\n#{description}\n\n\n\n\n"
 
     attraction = Attraction.new(
                   name: name,
+                  price: price,
                   one_liner: one_liner,
                   description: description,
                 )
     attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
 
     attraction.user = User.first
-    attraction.save
+    attraction.save!
   end
 end
