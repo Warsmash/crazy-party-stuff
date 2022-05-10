@@ -2,12 +2,14 @@
   <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @attraction.name %>
+  <strong><%= @attraction.name %></strong>
 </p>
 
 <p>
-  <strong>One liner:</strong>
+  <%= @attraction.price %> € per day
+</p>
+
+<p>
   <%= @attraction.one_liner %>
 </p>
 
@@ -15,11 +17,6 @@
   <strong>Description:</strong>
   <%= @attraction.description %>
 </p>
-
-<%# <p>
-  <strong>Price:</strong>
-  <%= @attraction.price %>
-<%# </p> %>
 
 <% if @attraction.photo.attached? %>
 <%= cl_image_tag @attraction.photo.key, height: 300, width: 400, crop: :fill %>

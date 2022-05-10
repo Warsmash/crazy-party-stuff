@@ -5,8 +5,11 @@
 
   <div class="attracname"><%= booking.attraction.name %></div> /////
    <div class="date">
-      <th><%= booking.start_date %></th> =>
-      <th><%= booking.end_date %></th>
+      <th>From <%= booking.start_date %></th>
+      <th>to <%= booking.end_date %></th>
+   </div>
+   <div>
+    Total price: <%= ((booking.end_date - booking.start_date) * booking.attraction.price).round %> €
    </div>
   <% if booking.attraction.photo.attached? %>
     <%= cl_image_tag booking.attraction.photo.key, height: 300, width: 400, crop: :fill %>

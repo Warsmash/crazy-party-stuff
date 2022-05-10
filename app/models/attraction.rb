@@ -6,7 +6,7 @@ class Attraction < ApplicationRecord
   # an attraction must be linked to a user
   validates_associated :user
   # an attraction must have a name, a one-liner and a description
-  validates :name, :one_liner, :description, presence: true
+  validates :name, :one_liner, :description, :price, presence: true
   # an attraction's name must be unique
   validates :name, uniqueness: true
 
