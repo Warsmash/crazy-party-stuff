@@ -1,6 +1,15 @@
 <div class="container">
   <h1>Party attractions near you</h1>
 
+    <%= form_tag attractions_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find your attraction"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
   <div class="card_behavior">
     <% @attractions.each do |attraction| %>
       <div class="card" <% if attraction.photo && attraction.photo.attached? %>
