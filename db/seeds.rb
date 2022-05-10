@@ -18,7 +18,8 @@ User.create!(email: 'test@test.com', password: 'azerty')
 
 articles.each do |article|
   name = article.search(".product-title-loop").search('a').text
-  p name
+  price = (rand(20) + 1) * 100
+  puts name, price
   one_liner = article.search("p").text.split('.').first
 
   show_url = article.search(".product-title-loop").search('a').attribute("href").value
@@ -31,10 +32,10 @@ articles.each do |article|
     description = show_doc.search('article').search('p').first.text[0..450]
     description = description.length < 15 ? 'lololololololololololol' : description
     puts "\n\n\n\n\n#{description}\n\n\n\n\n"
-    p description
 
     attraction = Attraction.new(
                   name: name,
+                  price: price,
                   one_liner: one_liner,
                   description: description,
                 )

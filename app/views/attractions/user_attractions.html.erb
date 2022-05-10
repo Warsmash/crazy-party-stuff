@@ -1,4 +1,4 @@
-<h1>My attractions</h1>
+<h1>My party attractions</h1>
 <%= link_to "Create a party attraction", new_attraction_path %>
 <% if flash[:alert] %>
   <div class="flash flash-success alert alert-dismissible fade show" role="alert">
@@ -14,6 +14,7 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo, crop: :fill %>')">
           <h3> <%= link_to attraction.name, attraction_path(attraction) %> </h3>
           <p> <%= attraction.one_liner %> </p>
+          <p> <%= attraction.price %> € per day</p>
 
           <%= link_to "Edit", edit_attraction_path(attraction), class: 'button'%>
           <%= link_to "Delete", attraction_path(attraction), method: :delete %>

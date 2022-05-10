@@ -8,6 +8,7 @@
         <div class="card-content">
           <h3 class="card-title"><%= attraction.name %></h3>
             <p class="card-body"><%= attraction.one_liner %></p>
+            <p class="card-body"><%= attraction.price %> € per day</p>
              <%= link_to "View Details...", attraction_path(attraction), class: 'button' %>
         </div>
       </div>
