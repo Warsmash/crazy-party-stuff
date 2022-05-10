@@ -1,14 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-
 require "open-uri"
 require "nokogiri"
-
-url = "https://over21partyrentals.com/products/crazy-stuff"
-html_file = URI.open(url).read
-html_doc = Nokogiri::HTML(html_file)
-
-articles = html_doc.search('article')
 
 Booking.destroy_all
 Attraction.destroy_all
@@ -16,32 +7,205 @@ User.destroy_all
 
 User.create!(email: 'test@test.com', password: 'azerty')
 
-articles.each do |article|
-  name = article.search(".product-title-loop").search('a').text
-  price = (rand(20) + 1) * 100
-  puts name, price
-  one_liner = article.search("p").text.split('.').first
+# Attraction 1
 
-  show_url = article.search(".product-title-loop").search('a').attribute("href").value
-  show_file = URI.open(show_url).read
-  show_doc = Nokogiri::HTML(show_file)
+attraction = Attraction.new(
+  name: 'NAME 1',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
 
-  unless show_doc.search('.side-image').search('img').first.attribute("src").nil?
-    img_url = show_doc.search('.side-image').search('img').first.attribute("src").value
-    file = URI.open(img_url)
-    description = show_doc.search('article').search('p').first.text[0..450]
-    description = description.length < 15 ? 'lololololololololololol' : description
-    puts "\n\n\n\n\n#{description}\n\n\n\n\n"
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
 
-    attraction = Attraction.new(
-                  name: name,
-                  price: price,
-                  one_liner: one_liner,
-                  description: description,
-                )
-    attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+attraction.user = User.first
+attraction.save!
 
-    attraction.user = User.first
-    attraction.save!
-  end
-end
+
+# Attraction 2
+
+attraction = Attraction.new(
+  name: 'NAME 2',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 3
+
+attraction = Attraction.new(
+  name: 'NAME 3',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 4
+
+attraction = Attraction.new(
+  name: 'NAME 4',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 5
+
+attraction = Attraction.new(
+  name: 'NAME 5',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 6
+
+attraction = Attraction.new(
+  name: 'NAME 6',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 7
+
+attraction = Attraction.new(
+  name: 'NAME 7',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 8
+
+attraction = Attraction.new(
+  name: 'NAME 8',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 9
+
+attraction = Attraction.new(
+  name: 'NAME 9',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 10
+
+attraction = Attraction.new(
+  name: 'NAME 10',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 11
+
+attraction = Attraction.new(
+  name: 'NAME 11',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
+
+
+# Attraction 12
+
+attraction = Attraction.new(
+  name: 'NAME 12',
+  price: 100,
+  one_liner: 'ONE_LINER',
+  description: 'DESCRIPTION',
+)
+
+img_url = 'https://picsum.photos/200/300'
+file = URI.open(img_url)
+attraction.photo.attach(io: file, filename: "#{attraction.name}.jpg", content_type: 'image/jpg')
+
+attraction.user = User.first
+attraction.save!
