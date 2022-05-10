@@ -3,7 +3,12 @@ class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:show, :edit, :update, :destroy]
 
   def index
-    @attractions = policy_scope(Attraction).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR one_liner ILIKE :query OR description ILIKE:query"
+      @attractions = Attraction.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @attractions = policy_scope(Attraction).order(created_at: :desc)
+    end
   end
 
   def new
