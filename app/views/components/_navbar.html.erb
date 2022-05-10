@@ -36,6 +36,10 @@
   <% if user_signed_in? %>
     <a href="/my_attractions">My attractions</a>
     <a href="/user_bookings">My bookings</a>
+
+    <div class="btn-logout">
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
   <% end %>
 
   <div class="login-container">
