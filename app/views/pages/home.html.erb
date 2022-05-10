@@ -1,7 +1,9 @@
 
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1530104091755-015d31dfa0b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1909&q=80);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1608048608029-99c772d199ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80);">
       <div class="container">
-        <h1><strong>Crazy Party Stuff</strong> ! 🥳 </h1>
+        <x-sign>
+          Crazy Party Stuff
+        </x-sign>
       </div>
     </div>
 
@@ -9,7 +11,7 @@
     <% @attractions.each do |attraction| %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(attraction.photo.key) %>);">
         <div class="card-content">
-          <h3 class="card-title"><%= attraction.name %></h3>
+          <h4 class="card-title"><%= attraction.name %></h4>
           <p class="card-body"><%= attraction.one_liner %></p>
           <p class="card-body"><%= attraction.price %> € per day</p>
           <%= link_to "Learn More...", attraction_path(attraction), class: 'button' %>
@@ -17,7 +19,25 @@
       </div>
     <% end %>
   </div>
-
 <div class="text-center">
   <a href="./attractions" class="button">Voir toutes les attractions</a>
 </div>
+
+<script>
+const signs = document.querySelectorAll('x-sign')
+const randomIn = (min, max) => (
+  Math.floor(Math.random() * (max - min + 1) + min)
+)
+
+const mixupInterval = el => {
+  const ms = randomIn(2000, 4000)
+  el.style.setProperty('--interval', `${ms}ms`)
+}
+
+signs.forEach(el => {
+  mixupInterval(el)
+  el.addEventListener('webkitAnimationIteration', () => {
+    mixupInterval(el)
+  })
+})
+</script>

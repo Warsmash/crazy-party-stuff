@@ -34,16 +34,16 @@
   justify-content: space-between;
   flex-wrap: wrap;
   display: flex;
-  min-height: 100vh; /* emplacement de la card */
-  line-height: 1.6; /* + le chiffre augmente;+ les cards descendent*/
-  background: #F4F4F4; /*couleur du background => à mettre ds le body */
+  min-height: 100vh;
+  line-height: 1.6;
+  background: #F4F4F4;
   grid-row-gap: 40px;
   font-family: 'Roboto', sans-serif;
 }
 
 
 .card {
-  color:whitesmoke; /*couleur du text */
+  color:whitesmoke; /*couleur txt */ 
   background-size: cover;
   background-color: rgb(98, 185, 236);
   width: 45ch;
@@ -53,8 +53,7 @@
   transition: transform 500ms ease;
   justify-content: space-around;
   padding: auto;
-  margin: auto;
-  margin-bottom: 5px;
+  margin: 0px 0px 0px 0px;
 }
 
 .card:hover,
@@ -94,7 +93,7 @@
   transform: scaleX(1);
 }
 
-/* BUTTON*/
+/* BUTTON */
 .button {
   cursor: pointer;
   display: inline-block;
@@ -178,18 +177,18 @@
 
 
 
-/* .attractions { */
-  /* padding: 40px 140px 140px 100px;
+ .attractions {
+  padding: 40px 140px 140px 100px;
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
-  display: flex; */
- /*  min-height: 100vh;  *//* emplacement de la card */
-  /* line-height: 1.6; */ /* + le chiffre augmente;+ les cards descendent*/
-  /* background: #F4F4F4; */ /*couleur du background => à mettre ds le body */
-  /* grid-row-gap: 40px;
-  font-family: 'Roboto', sans-serif; */ 
-  /* display: grid;
+  display: flex;
+  min-height: 100vh;
+  line-height: 1.6;
+  background: #F4F4F4;
+  grid-row-gap: 40px;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   align-items: center;
@@ -209,7 +208,7 @@
 
 .attraction-card {
 
- /*  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 200px;
   color: white;
   margin: auto;
@@ -223,5 +222,5 @@
     font-size: 12px;
     font-weight: normal;
     opacity: 1;
-  } */
-/*} */
+  }
+}
