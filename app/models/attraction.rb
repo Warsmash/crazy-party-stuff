@@ -1,4 +1,10 @@
 class Attraction < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_one_liner_and_description,
+    against: [ :name, :one_liner, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
@@ -6,7 +12,7 @@ class Attraction < ApplicationRecord
   # an attraction must be linked to a user
   validates_associated :user
   # an attraction must have a name, a one-liner and a description
-  validates :name, :one_liner, :description, presence: true
+  validates :name, :one_liner, :description, :price, presence: true
   # an attraction's name must be unique
   validates :name, uniqueness: true
 
