@@ -18,18 +18,7 @@
   <%= @attraction.description %>
 </p>
 
-<p>
- <%= pluralize @restaurant.reviews.size, "review" %>
-</p>
-<div id="reviews">
-  <% if @attraction.reviews.blank? %>
-    Be the first to leave a review for <%= @attraction.name %>
-  <% else %>
-    <% @attraction.reviews.each do |review| %>
-      <p><%= review.content %></p>
-    <% end %>
-  <% end %>
-</div>
+
 
 <% if @attraction.photo.attached? %>
   <%= cl_image_tag @attraction.photo.key, height: 300, width: 400, crop: :fill %>
@@ -52,5 +41,19 @@
     <%= f.input :start_date, input_html: { class: "datepicker"}, label: 'Start Date', placeholder: "#{Date.today}", required: true %>
     <%= f.input :end_date, input_html: { class: "datepicker"}, label: 'End Date', placeholder: "#{Date.today}", required: true %>
     <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>
+
+</div>
+
+<div id="reviews">
+<p>
+ <%= pluralize @attraction.reviews.size, "review" %>
+</p>
+  <% if @attraction.reviews.blank? %>
+    Be the first to leave a review for <%= @attraction.name %>
+  <% else %>
+    <% @attraction.reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
   <% end %>
 </div>

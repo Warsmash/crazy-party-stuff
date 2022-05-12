@@ -12,6 +12,9 @@ class BookingsController < ApplicationController
 
   def user_bookings
     @bookings = current_user.bookings
+    @past_bookings = current_user.bookings.select do |booking|
+      booking.end_date < DateTime.now
+    end
   end
 
   private

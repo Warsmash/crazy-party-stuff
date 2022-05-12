@@ -77,4 +77,5 @@ gem 'cloudinary', '~> 1.16.0'
 gem "geocoder", '~> 1.7'
 gem 'pg_search', '~> 2.3.0'
 gem "algoliasearch-rails"
+gem "turbolinks_render"
 
