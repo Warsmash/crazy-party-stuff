@@ -18,6 +18,19 @@
   <%= @attraction.description %>
 </p>
 
+<p>
+ <%= pluralize @restaurant.reviews.size, "review" %>
+</p>
+<div id="reviews">
+  <% if @attraction.reviews.blank? %>
+    Be the first to leave a review for <%= @attraction.name %>
+  <% else %>
+    <% @attraction.reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
+  <% end %>
+</div>
+
 <% if @attraction.photo.attached? %>
   <%= cl_image_tag @attraction.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
