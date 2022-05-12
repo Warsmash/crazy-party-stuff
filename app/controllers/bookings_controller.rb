@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  skip_after_action :verify_authorized
+  #skip_after_action :verify_authorized
 
   def create
     @booking = Booking.new(booking_params)
