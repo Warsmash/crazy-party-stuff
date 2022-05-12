@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 // Specific CSS for your home-page
 *,
@@ -10,66 +11,69 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px ;
+  padding: 250px ;
+/*   margin: 20px 70px 20px 70px;
+ */  border-radius: 30px;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
 
-.banner h1:hover {
+/* .banner h1:hover {
   color: #3ea5fa;
   text-shadow: 0 0 5px #3ea5fa, 0 0 25px #3ea5fa, 0 0 50px #3ea5fa, 0 0 200px #3ea5fa;
   font-weight: bolder;
-}
+} */
 
 
 .card-behavior {
-  padding: 40px 140px 140px 100px;
+  padding: 40px 70px 40px 70px; /* marge */
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
   display: flex;
-  min-height: 100vh;
-  line-height: 1.6;
-  background: #F4F4F4;
+  min-height: 10vh; /* emplacement de la card */
+  line-height: 1.6; /* + le chiffre augmente;+ les cards descendent*/
+  background: #F4F4F4; /*couleur du background => à mettre ds le body */
   grid-row-gap: 40px;
   font-family: 'Roboto', sans-serif;
 }
 
 
 .card {
-  color:whitesmoke; /*couleur txt */ 
+  color:rgb(3, 3, 3); /*couleur du text */
   background-size: cover;
-  background-color: rgb(98, 185, 236);
-  width: 45ch;
-  height: 65ch;
-  border-radius: 3%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #F4F4F4;
+  width: 40ch;
+  height: 50ch;
+  border-radius: 30px;
   overflow: hidden;
   transition: transform 500ms ease;
   justify-content: space-around;
-  padding: auto;
   margin: 0px 0px 0px 0px;
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  box-shadow: 0px 5px 20px #999;
 }
+
 
 .card:hover,
 .card:focus-within {
   transform: scale(1.05);
+	filter: grayscale(0);
+
 }
 
 .card-content {
   --padding: 0.5rem;
   padding:var(--padding);
-  background: linear-gradient(to top left, transparent,rgba(0, 0, 0, 0));
+  background: linear-gradient( transparent,rgba(17, 16, 16, 0.615));
+
 }
 
 .card-title {
   position: relative;
-  width: fit-content; /* one line only or break */
   font-family: 'Roboto', sans-serif;
 }
 
@@ -83,8 +87,8 @@
   width: calc(100% + var(--padding));
   background:#3ea5fa;
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 500ms ease;
+  transform-origin: center;
+
 }
 
 /* lenght underline */
@@ -93,15 +97,15 @@
   transform: scaleX(1);
 }
 
-/* BUTTON */
+/* BUTTON*/
 .button {
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  color: #fefefe;
+  color: black;
   padding: 0.2em 1.25em;
   border-radius: 0.25rem;
-  transform-origin: left;
+  transform-origin: center;
 }
 
 .button:hover,
@@ -111,6 +115,9 @@
   transform-origin: left;
 }
 
+.text-center {
+  padding: 40px 70px 40px 70px;
+}
 
 
 @media screen and (max-width: 1024px){
@@ -171,56 +178,5 @@
 
   .card-title::after{
     transform: scaleX(0);
-  }
-}
-
-
-
-
- .attractions {
-  padding: 40px 140px 140px 100px;
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  display: flex;
-  min-height: 100vh;
-  line-height: 1.6;
-  background: #F4F4F4;
-  grid-row-gap: 40px;
-  font-family: 'Roboto', sans-serif;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  align-items: center;
-}
-
-@media(max-width: 992px) {
-  .attractions {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media(max-width: 768px) {
-  .attractions {
-    grid-template-columns: 1fr;
-  }
-}
-
-.attraction-card {
-
-  font-family: 'Roboto', sans-serif;
-  height: 200px;
-  color: white;
-  margin: auto;
-
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 12px;
-    font-weight: normal;
-    opacity: 1;
   }
 }
