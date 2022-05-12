@@ -10,18 +10,19 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 250px ;
-  margin: 20px 70px 20px 70px;
-  border-radius: 30px;
+  padding: 250px;
+/*   margin: 20px 70px 20px 70px;
+ */  border-radius: 30px;
 }
 
-x-sign:nth-of-type(8) {
+x-sign:nth-of-type(9) {
   margin: 0;
-  color: blue;
-  --color1: blueviolet ;
-  --color2: orange;
-  --color3: brown;
-  --color4: purple;
+  color: yellow;
+  --color1: yellow;
+  --color2: lime;
+  --color3: green;
+  --color4: darkgreen;
+
   /* color: #F4F4F4;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-weight: bold; */
@@ -32,20 +33,20 @@ x-sign {
   display: block;
   font-weight: 32px ;
   text-shadow:
-    10 0 10px var(--color1),
-    10 0 20px var(--color2),
-    0 0 40px var(--color3),
-    0 0 80px var(--color4);
+  10 0 10px var(--color1),
+  10 0 20px var(--color2),
+  0 0 40px var(--color3),
+  0 0 80px var(--color4);
   will-change: filter, color;
   filter: saturate(60%);
   animation: flicker steps(100) var(--interval) 1s infinite;
+  font-family: 'Monoton';
 }
 
 
 
 @keyframes flicker {
   50% {
-    color: blue ;
     filter: saturate(200%) hue-rotate(20deg);
   }
 }
@@ -73,8 +74,8 @@ x-sign {
 
 .card {
   color:rgb(3, 3, 3); /*couleur du text */
-  background-size: contain;
-  background-position: center top ;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   background-color: #F4F4F4;
   width: 40ch;
@@ -89,7 +90,6 @@ x-sign {
 	transition: .3s ease-in-out;
   box-shadow: 0px 5px 20px #999;
 }
-
 
 
 .card:hover,
@@ -109,6 +109,7 @@ x-sign {
 .card-title {
   position: relative;
   font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
 }
 
 /*underline */
@@ -138,8 +139,8 @@ x-sign {
   text-decoration: none;
   color: black;
   padding: 0.2em 1.25em;
-  border-radius: 0.25rem;
-  transform-origin: center;
+  border-radius: 12px;
+  transform-origin: left;
 }
 
 .button:hover,
@@ -183,7 +184,7 @@ x-sign {
 /*Glitch diff Browsers*/
 @media (hover) {
   .card-content {
-    transform: translateY(180%); /*Up and Down like a rollerCoaster */
+    transform: translateY(120%); /*Up and Down like a rollerCoaster */
     transition: transform  500ms ease;
 
   }
@@ -198,7 +199,7 @@ x-sign {
 
   /* fix glitch  => Firefox*/
   .card:focus-within .card-content {
-    transition-duration: 0ms;
+    transition-duration: 500ms;
 
   }
 
@@ -211,6 +212,6 @@ x-sign {
   }
 
   .card-title::after{
-    transform: scaleX(0);
+    transform: scaleX(1);
   }
 }
