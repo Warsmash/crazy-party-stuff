@@ -1,4 +1,4 @@
-const signs = document.querySelectorAll('banner_title')
+const signs = document.querySelectorAll('x-sign')
 const randomIn = (min, max) => (
   Math.floor(Math.random() * (max - min + 1) + min)
 )

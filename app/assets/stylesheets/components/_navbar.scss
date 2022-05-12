@@ -230,12 +230,15 @@ a {
   font-size: 17px;
   border: none;
   cursor: pointer;
+  border-radius: 12px; // ajout Kenza
 }
 
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
-  padding: 12px;
+  padding-left: 40px;
+  
+  // padding : 12px desactivation Kenza
 }
 
 .topnav a {
@@ -246,6 +249,8 @@ a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  border-radius: 12px; // Ajout par kenza -- conccordance avec les Buttons
+  margin: 5px; // ajout Kenza
 }
 
 .topnav a:hover {
@@ -261,6 +266,7 @@ a {
 
 .topnav .login-container {
   float: right;
+  border-radius: 12px; // Ajout Kenza
 }
 
 .topnav input[type=text] {
@@ -269,12 +275,13 @@ a {
   font-size: 17px;
   border: none;
   width: 150px;
+  border-radius: 12px;
 }
 
 .topnav .login-container button {
   float: right;
-  padding: 6px;
-  margin-top: -6px;
+  // padding: 6px; mis en commentaire par Kenza; ils empechaient l'alignement
+  // margin-top: -6px; des elements dans la nav-bar
   margin-right: 0px;
   background: #ddd;
   font-size: 17px;
@@ -297,6 +304,8 @@ a {
     width: 100%;
     margin: 0;
     padding: 14px;
+    border-radius: 12px;
+
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;
