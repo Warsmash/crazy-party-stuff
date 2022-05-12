@@ -322,6 +322,7 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
+  elasticsearch (< 7.14)
   font-awesome-sass (~> 6.1.1)
   font_awesome5_rails
   geocoder (~> 1.7)
