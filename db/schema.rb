@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 2022_05_12_175715) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.bigint "attraction_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attraction_id"], name: "index_reviews_on_attraction_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "email", default: "", null: false
@@ -84,4 +92,5 @@ ActiveRecord::Schema.define(version: 2022_05_12_175715) do
   add_foreign_key "attractions", "users"
   add_foreign_key "bookings", "attractions"
   add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "attractions"
 end
