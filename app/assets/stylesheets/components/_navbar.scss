@@ -250,7 +250,8 @@ a {
 
 .topnav a:hover {
   background-color: #ddd;
-  color: black;
+  color: black; 
+  // transform: translateY(40px) rotateX(-90deg);
 }
 
 .topnav a.active {
