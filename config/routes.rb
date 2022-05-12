@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :attractions do
     resources :bookings
+    resources :reviews, only: :create
+
   end
 
   get "my_attractions", to: "attractions#user_attractions"
