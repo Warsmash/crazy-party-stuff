@@ -8,9 +8,7 @@
 <%#  %>
 
 <div class="upper">WELCOME</div>
-<a href="/"><p class="crazy">Crazy</p></a>
-<a href="/"><p class="party">Party</p></a>
-<a href="/"><p class="stuff">Stuff</p></a>
+<p><span class="crazy">Crazy</span> <span class="party">Party</span> <span class="stuff">Stuff</span></p>
 
 <%# <section>
   <div>Let's party:</div>
@@ -28,21 +26,31 @@
 
 <%# data-item="Crazy.Party.Stuff"  %>
 
-<div class="topnav">
+<div class="topnav d-flex justify-content-between">
 
-  <a href="/">Home</a>
-  <a href="/attractions">Attractions</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
+  <div class='visitor-nav'>
+    <a href="/">Home</a>
+    <a href="/attractions">Attractions</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </div>
 
-  <% if user_signed_in? %>
-    <a href="/my_attractions">My party attractions</a>
-    <a href="/user_bookings">My bookings</a>
-
-    <div class="btn-logout">
-      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "topnav a"%>
-    </div>
-  <% end %>
+  <div class="user-nav ml-auto">
+    <% if user_signed_in? %>
+      <div class="avatar-dropdown">
+        <% if current_user.photo.attached? %>
+          <img class="avatar dropbtn" src="<%= current_user.photo.url %>">
+        <% else %>
+          <img class="avatar dropbtn" src="https://www.pasrc.org/sites/g/files/toruqf431/files/styles/freeform_750w/public/2021-03/blank-profile-picture_0.jpg?itok=iSBmDxc8">
+        <% end %>
+        <div class="dropdown-content">
+          <a href="/user_bookings">My bookings</a>
+          <a href="/my_attractions">My attractions</a>
+          <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-logout"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   <div class="login-container">
   <% if !user_signed_in? %>
