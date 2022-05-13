@@ -5,10 +5,9 @@ class AttractionsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "name ILIKE :query OR one_liner ILIKE :query OR description ILIKE:query"
-      @attractions = Attraction.where(sql_query, query: "%#{params[:query]}%")
+      @attractions = policy_scope(Attraction).where(sql_query, query: "%#{params[:query]}%")
     else
-      @attractions = Attraction.all
-      #policy_scope(Attraction).order(created_at: :desc)
+      @attractions = policy_scope(Attraction).order(created_at: :desc)
     end
   end
 
@@ -63,8 +62,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
   end
 
-
   def attraction_params
-    params.require(:attraction).permit(:name, :one_liner, :description, :photo)
+    params.require(:attraction).permit(:name, :one_liner, :price, :description, :photo)
   end
 end

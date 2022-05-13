@@ -19,7 +19,7 @@ class AttractionPolicy < ApplicationPolicy
   end
 
   def user_attractions?
-    true
+    return true
   end
 
   class Scope < Scope
