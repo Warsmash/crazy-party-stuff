@@ -1,65 +1,5 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
-
-// /* Add a black background color to the top navigation */
-// .topnav {
-//   background-color: #333;
-//   overflow: hidden;
-// }
-
-// /* Style the links inside the navigation bar */
-// .topnav a {
-//   float: left;
-//   color: #f2f2f2;
-//   text-align: center;
-//   padding: 14px 16px;
-//   text-decoration: none;
-//   font-size: 17px;
-// }
-
-// /* Change the color of links on hover */
-// .topnav a:hover {
-//   background-color: #ddd;
-//   color: black;
-// }
-
-// /* Add a color to the active/current link */
-// .topnav a.active {
-//   background-color: lightgray;
-//   color: white;
-// }
-
-//
-
-// * {
-//   padding: 0;
-//   margin: 0;
-// }
-
-// body {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   position: relative;
-//   min-height: 100vh;
-//   font-family: Hack, monospace;
-// }
-
-// div {
-//   color: #727272;
-//   text-align: center;
-// }
+@import "avatar";
+@import "user-dropdown";
 
 a {
   text-decoration: none;
@@ -72,7 +12,6 @@ a {
   text-transform: uppercase;
   // font-weight: 500;
   transition: all 1s ease-in-out;
-  position: relative;
   font-weight: bold;
 
   // &::before {
@@ -110,7 +49,6 @@ a {
       0 0 102px orangered,
       0 0 151px orangered;
     color: rgb(255, 100, 100);
-    position: sticky;
 }
 
 .party {
@@ -120,7 +58,6 @@ a {
   // text-transform: uppercase;
   // font-weight: 500;
   transition: all 1s ease-in-out;
-  position: relative;
   font-weight: bolder;
   font-family: cursive;
 }
@@ -138,7 +75,6 @@ a {
     0 0 102px purple,
     0 0 151px purple;
   color: rgb(162, 50, 162);
-  position: sticky;
 }
 
 .stuff {
@@ -148,7 +84,6 @@ a {
   // text-transform: uppercase;
   // font-weight: 500;
   transition: all 1s ease-in-out;
-  position: relative;
   font-weight: bold;
   font-family: monospace;
   font-stretch: expanded;
@@ -167,53 +102,7 @@ a {
     0 0 102px blue,
     0 0 151px blue;
   color: rgb(15, 120, 235);
-  position: sticky;
 }
-
-// nav {
-//   margin: 25px;
-//   background: #f9f9f9;
-//   padding: 16px;
-//   .menuItems {
-//     list-style: none;
-//     display: flex;
-
-//     li {
-//       margin: 50px;
-
-//       a {
-//         text-decoration: none;
-//         color: #8f8f8f;
-//         font-size: 24px;
-//         font-weight: 400;
-//         transition: all 0.5s ease-in-out;
-//         position: relative;
-//         text-transform: uppercase;
-
-//         // &::before {
-//         //   content: attr(data-item);
-//         //   transition: 0.5s;
-//         //   color: black;
-//         //   position: absolute;
-//         //   top: 0;
-//         //   bottom: 0;
-//         //   left: 0;
-//         //   right: 0;
-//         //   width: 0;
-//         //   overflow: hidden;
-//         // }
-
-//         &:hover {
-//         //   &::before {
-//         //     width: 100%;
-//         //     transition: all 0.5s ease-in-out;
-//         //   }
-//           background: black;
-//         }
-//       }
-//     }
-//   }
-// }
 
 * {box-sizing: border-box;}
 
@@ -221,24 +110,8 @@ a {
   float: right;
 }
 
-.btn-logout {
-  float: right;
-  padding: 6px;
-  margin-top: 3px;
-  margin-right: 0px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  border-radius: 12px; // ajout Kenza
-}
-
 .topnav {
-  overflow: hidden;
   background-color: #e9e9e9;
-  padding-left: 40px;
-  
-  // padding : 12px desactivation Kenza
 }
 
 .topnav a {
@@ -246,16 +119,16 @@ a {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 12px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 12px; // Ajout par kenza -- conccordance avec les Buttons
   margin: 5px; // ajout Kenza
 }
 
 .topnav a:hover {
   background-color: #ddd;
-  color: black; 
+  color: black;
   // transform: translateY(40px) rotateX(-90deg);
 }
 
@@ -271,7 +144,7 @@ a {
 
 .topnav input[type=text] {
   padding: 6px;
-  margin-top: 8px;
+  margin: 12px 0px;
   font-size: 17px;
   border: none;
   width: 150px;
@@ -280,8 +153,6 @@ a {
 
 .topnav .login-container button {
   float: right;
-  // padding: 6px; mis en commentaire par Kenza; ils empechaient l'alignement
-  // margin-top: -6px; des elements dans la nav-bar
   margin-right: 0px;
   background: #ddd;
   font-size: 17px;

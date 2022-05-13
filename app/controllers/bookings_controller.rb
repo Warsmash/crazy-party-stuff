@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  #skip_after_action :verify_authorized
+  skip_after_action :verify_authorized
 
   def create
     @booking = Booking.new(booking_params)
@@ -12,6 +12,9 @@ class BookingsController < ApplicationController
 
   def user_bookings
     @bookings = current_user.bookings
+    @past_bookings = current_user.bookings.select do |booking|
+      booking.end_date < DateTime.now
+    end
   end
 
   private

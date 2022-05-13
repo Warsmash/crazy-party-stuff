@@ -1,6 +1,8 @@
 <h1 class="attractitle">My bookings</h1>
 <div class="book">
 
+
+
   <% @bookings.each do |booking|%>
 
   <h2 class="attracname">
@@ -23,6 +25,7 @@
 
   <% end %>
 </div>
+<h2>past bookings: <%= @past_bookings%></h2>
 
 
 <%# montrer réservations %>
