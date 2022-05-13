@@ -234,10 +234,11 @@ attraction.save!
 attraction = Attraction.new(
   name: 'Banana Ride with Friends',
   price: 100,
+
   one_liner: 'This is not a cruise',
   description: 'Friends + giant inflatable banana + high-speed boat: what could be better?
                 Works best on water but if you have grass around, we can adapt.'
-)
+
 
 img_url = 'https://images.unsplash.com/photo-1521289594125-e8e32a214a2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
 file = URI.open(img_url)

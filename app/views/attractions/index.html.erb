@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Party attractions near you</h1>
+  <h1>Party attractions</h1>
 
     <%= form_tag attractions_path, method: :get do %>
   <%= text_field_tag :query,
@@ -12,13 +12,14 @@
 
   <div class="card_behavior">
     <% @attractions.each do |attraction| %>
-      <div class="card" <% if attraction.photo && attraction.photo.attached? %>
-      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path attraction.photo.key, crop: :fill %>')" <% end %>>
+      <div class="card"style="background-image: url('<%= cl_image_path attraction.photo.key, crop: :fill %>')"
+        <% if attraction.photo && attraction.photo.attached? %>
+        <% end %>>
         <div class="card-content">
-          <h3 class="card-title"><%= attraction.name %></h3>
-            <p class="card-body"><%= attraction.one_liner %></p>
-            <p class="card-body"><%= attraction.price %> € per day</p>
-             <%= link_to "View Details...", attraction_path(attraction), class: 'button' %>
+          <h4 class="card-title"><%= attraction.name %></h4>
+          <p class="card-body"><%= attraction.one_liner %></p>
+          <p class="card-body"><%= attraction.price %> € per day</p>
+          <%= link_to "View Details...", attraction_path(attraction), class: 'button' %>
         </div>
       </div>
     <% end %>
