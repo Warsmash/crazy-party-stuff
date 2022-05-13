@@ -7,6 +7,7 @@
   height: 100px;
   padding: 0px 50px;
   color: black;
+  margin-top: 32px
 }
 .footer-links {
   display: flex;
@@ -29,6 +30,19 @@
 .footer-copyright {
   font-size: medium;
   font-weight: bold;
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(255, 0, 90),
+    0 0 82px rgb(255, 0, 90),
+    0 0 92px rgb(255, 0, 90),
+    0 0 102px rgb(255, 0, 90),
+    0 0 151px rgb(255, 0, 90);
+  color: rgb(205, 45, 100);
+  margin-top: 8px
 }
 
 //
