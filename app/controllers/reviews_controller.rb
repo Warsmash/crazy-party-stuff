@@ -8,10 +8,11 @@ class ReviewsController < ApplicationController
     else
       render 'attractions/show'
     end
-    def show
-      @attraction = Attraction.find(params[:id])
-      @review = Review.new  # <-- You need this now.
-    end
+  end
+
+  def show
+    @attraction = Attraction.find(params[:id])
+    @review = Review.new  # <-- You need this now.
   end
 
   private
