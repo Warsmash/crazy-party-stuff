@@ -1,9 +1,21 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><%= @attraction.name %></strong>
-</p>
+<div class="d-flex justify-content-between">
+  <div>
+    <strong><%= @attraction.name %></strong>
+  </div>
+
+  <div>
+    <span class='mx-1'>Owner: <%= @attraction.user.first_name %></span>
+    <% if @attraction.user.photo.attached? %>
+      <img class="avatar mx-1" src="<%= @attraction.user.photo.url %>">
+    <% else %>
+      <img class="avatar mx-1" src="https://www.pasrc.org/sites/g/files/toruqf431/files/styles/freeform_750w/public/2021-03/blank-profile-picture_0.jpg?itok=iSBmDxc8">
+    <% end %>
+  </div>
+</div>
+
 
 <p>
   <%= @attraction.price %> € per day
@@ -17,6 +29,8 @@
   <strong>Description:</strong>
   <%= @attraction.description %>
 </p>
+
+
 
 <% if @attraction.photo.attached? %>
   <%= cl_image_tag @attraction.photo.key, height: 300, width: 400, crop: :fill %>
@@ -39,5 +53,19 @@
     <%= f.input :start_date, input_html: { class: "datepicker"}, label: 'Start Date', placeholder: "#{Date.today}", required: true %>
     <%= f.input :end_date, input_html: { class: "datepicker"}, label: 'End Date', placeholder: "#{Date.today}", required: true %>
     <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>
+
+</div>
+
+<div id="reviews">
+<p>
+ <%= pluralize @attraction.reviews.size, "review" %>
+</p>
+  <% if @attraction.reviews.blank? %>
+    Be the first to leave a review for <%= @attraction.name %>
+  <% else %>
+    <% @attraction.reviews.each do |review| %>
+      <p><%= review.content %></p>
+    <% end %>
   <% end %>
 </div>
