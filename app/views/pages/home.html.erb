@@ -1,24 +1,24 @@
 
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1608048608029-99c772d199ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80);">
+    <div class="banner">
       <div class="container">
-        <div  class="animate-flicker">
-          Crazy Party Stuff
-        </div>
+        <h1>
+          LOGO HERE
+        </h1>
       </div>
     </div>
 
   <div class="card-behavior">
     <% @attractions.each do |attraction| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(attraction.photo.key) %>);">
+      <div class="card" style="background-image: url(<%= cl_image_path(attraction.photo.key) %>);">
         <div class="card-content">
           <h4 class="card-title"><%= attraction.name %></h4>
           <p class="card-body"><%= attraction.one_liner %></p>
-          <p class="card-body"><%= attraction.price %> € per day</p>
+          <p class="card-body"><%= attraction.price %> </strong>€ per day</p>
           <%= link_to "Learn More...", attraction_path(attraction), class: 'button' %>
         </div>
       </div>
     <% end %>
   </div>
 <div class="text-center">
-  <a href="./attractions" class="button">Voir toutes les attractions</a>
+  <a href="./attractions" class="button-attractions">Voir toutes les attractions</a>
 </div>

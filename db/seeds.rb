@@ -199,7 +199,7 @@ attraction.save!
 attraction = Attraction.new(
   name: 'Banana Ride with Friends',
   price: 100,
-  one_liner: 'Friends + giant inflatable banana + high-speed boat',
+  one_liner: 'Giant inflatable banana + high-speed boat',
   description: 'This is not a cruise',
 )
 
