@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   # récupérer bookings de ce user-là
   # loop dans view .each do
   get "user_bookings", to: "bookings#user_bookings", as: :user_bookings
+
+  resources :conversations do
+    resources :messages
+  end
 end
