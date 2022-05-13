@@ -1,10 +1,11 @@
 .attractitle {
   margin: 16px;
   font-size: 40px;
-  color: #ccc;
+  color: rgba(128, 0, 128, 0.666);
   transition: all 1s ease-in-out;
   position: relative;
   font-weight: bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .attractitle:hover {
@@ -64,7 +65,16 @@
 
 .cost {
   font-size: 20px;
-  padding: 12px;                          
+  padding: 12px;
+}
+
+.pb {
+  font-size: 20px;
+  padding: 12px;
+  margin-left: 32px;
+  font-weight: lighter;
+  color: rgb(83, 83, 83);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 // @keyframes flicker  {
