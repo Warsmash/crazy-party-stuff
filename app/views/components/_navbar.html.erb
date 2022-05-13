@@ -1,42 +1,33 @@
-<%# <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#new">New</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div> %>
-
-<%#  %>
-
-<div class="upper">WELCOME</div>
 <p><span class="crazy">Crazy</span> <span class="party">Party</span> <span class="stuff">Stuff</span></p>
 
-<%# <section>
-  <div>Let's party:</div>
-  <nav>
-    <ul class="menuItems">
-      <li><a href='#' data-item='Home'>Home</a></li>
-      <li><a href='#' data-item='About'>About</a></li>
-      <li><a href='#' data-item='Attractions'>Attractions</a></li>
-      <li><a href='#' data-item='Contact'>Contact</a></li>
-      <li><a href='#' data-item='Login'>Login</a></li>
-    </ul>
-  </nav>
+<div class="topnav">
 
-</section> %>
+  <div class="visitor-nav  d-flex justify-content-between">
+    <% if !user_signed_in? %>
+      <%= render "components/pages_nav" %>
 
-<%# data-item="Crazy.Party.Stuff"  %>
+      <div class="login-container">
+          <form action="/">
+            <input type="text" placeholder="Email" name="email">
+            <input type="text" placeholder="Password" name="psw">
 
-<div class="topnav d-flex justify-content-between">
+            <div class="btn-login">
+              <%= link_to new_user_session_path do %>
+              <button type="submit">Login</button>
+              <% end %>
 
-  <div class='visitor-nav'>
-    <a href="/">Home</a>
-    <a href="/attractions">Attractions</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+            </div>
+          </form>
+
+
+      </div>
+    <% end %>
   </div>
 
-  <div class="user-nav ml-auto">
+  <div class="user-nav  d-flex justify-content-between">
     <% if user_signed_in? %>
+      <%= render "components/pages_nav" %>
+
       <div class="avatar-dropdown">
         <% if current_user.photo.attached? %>
           <img class="avatar dropbtn" src="<%= current_user.photo.url %>">
@@ -49,26 +40,9 @@
           <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-logout"%>
         </div>
       </div>
+
     <% end %>
   </div>
 
-  <div class="login-container">
-  <% if !user_signed_in? %>
 
-      <form action="/">
-        <input type="text" placeholder="Email" name="email">
-        <input type="text" placeholder="Password" name="psw">
-
-        <div class="btn-login">
-          <%= link_to new_user_session_path do %>
-          <button type="submit">Login</button>
-          <% end %>
-
-        </div>
-      </form>
-    <%# <%= link_to new_user_session_path do %>
-     <%# <p>LOGIN</p>
-    <% end %>
-     <% end %>
-  </div>
 </div>
