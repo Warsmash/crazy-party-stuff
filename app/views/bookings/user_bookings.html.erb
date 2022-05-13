@@ -1,19 +1,25 @@
-<h1>My bookings</h1>
+<h1 class="attractitle">My bookings</h1>
 <div class="book">
 
   <% @bookings.each do |booking|%>
 
-  <div class="attracname"><%= booking.attraction.name %></div> /////
+  <h2 class="attracname">
+   <%= booking.attraction.name %>
+  </h2>
+  
    <div class="date">
-      <th>From <%= booking.start_date %></th>
-      <th>to <%= booking.end_date %></th>
+      <th>From <strong><%= booking.start_date %></th></strong>
+      <th>to <strong><%= booking.end_date %></th></strong>
    </div>
-   <div>
-    Total price: <%= ((booking.end_date - booking.start_date) * booking.attraction.price).round %> €
+   <div class="cost">
+    Total price: <strong><%= ((booking.end_date - booking.start_date) * booking.attraction.price).round %> €</strong>
    </div>
-  <% if booking.attraction.photo.attached? %>
-    <%= cl_image_tag booking.attraction.photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
+
+  <div class="attracpic">
+    <% if booking.attraction.photo.attached? %>
+      <%= cl_image_tag booking.attraction.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
 
   <% end %>
 </div>
