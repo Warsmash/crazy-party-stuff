@@ -6,13 +6,13 @@ a {
 }
 
 .crazy {
-  margin: 16px;
+  margin: 8px;
   font-size: 20px;
   color: #ccc;
   text-transform: uppercase;
   // font-weight: 500;
   transition: all 1s ease-in-out;
-  font-weight: bold;
+  font-weight: bolder;
 
   // &::before {
   //   content: attr(CPS);
@@ -52,7 +52,7 @@ a {
 }
 
 .party {
-  margin: 16px;
+  margin: 0px;
   font-size: 30px;
   color: #ccc;
   // text-transform: uppercase;
@@ -78,15 +78,15 @@ a {
 }
 
 .stuff {
-  margin: 16px;
+  margin: 8px;
   font-size: 20px;
   color: #ccc;
-  // text-transform: uppercase;
+  text-transform: uppercase;
   // font-weight: 500;
   transition: all 1s ease-in-out;
-  font-weight: bold;
-  font-family: monospace;
-  font-stretch: expanded;
+  font-weight: bolder;
+  // font-family: monospace;
+  // font-stretch: expanded;
 }
 
 .stuff:hover {
@@ -96,12 +96,12 @@ a {
     0 0 7px #fff,
     0 0 10px #fff,
     0 0 21px #fff,
-    0 0 42px blue,
-    0 0 82px blue,
-    0 0 92px blue,
-    0 0 102px blue,
-    0 0 151px blue;
-  color: rgb(15, 120, 235);
+    0 0 42px darkslateblue,
+    0 0 82px darkslateblue,
+    0 0 92px darkslateblue,
+    0 0 102px darkslateblue,
+    0 0 151px darkslateblue;
+  color: rgb(85, 120, 240);
 }
 
 * {box-sizing: border-box;}
@@ -122,14 +122,13 @@ a {
   padding: 12px 16px;
   text-decoration: none;
   font-size: 16px;
-  border-radius: 12px; // Ajout par kenza -- conccordance avec les Buttons
+  border-radius: 6px; // Ajout par kenza -- conccordance avec les Buttons
   margin: 5px; // ajout Kenza
 }
 
 .topnav a:hover {
   background-color: #ddd;
   color: black;
-  // transform: translateY(40px) rotateX(-90deg);
 }
 
 .topnav a.active {
