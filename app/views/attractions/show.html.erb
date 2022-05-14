@@ -62,16 +62,25 @@
 <% end %>
 
 </div>
+<%# <div data-controller="insert-in-list">
+  <div data-insert-in-list-target="items">
+    <!-- [...] -->
+  </div>
+  <%= simple_form_for([ @attraction, @review ],
+                      data: { insert_in_list_target: "form" }) do |f| %>
+    <!-- [...] -->
+  <%# <% end %>
+</div>
+<div id="reviews" data-controller="insert-in-list">
+  <div data-insert-in-list-target="items">
 
-<div id="reviews" style="text-align: center">
-<p>
- <%= pluralize @attraction.reviews.size, "review" %>
-</p>
   <% if @attraction.reviews.blank? %>
     Be the first to leave a review for ✨<%= @attraction.name %>✨!
   <% else %>
     <% @attraction.reviews.each do |review| %>
-      <p><%= review.content %></p>
+      <p id="review-<%= review.id %>"><%= review.content %></p>
     <% end %>
   <% end %>
+  </div>
+    <%= render "review_form", review: @review %>
 </div>

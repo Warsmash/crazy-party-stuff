@@ -2,19 +2,21 @@
   <h1>Party attractions</h1>
 
     <%= form_tag attractions_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your attraction"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+    <div class="d-flex search-bar">
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find your attraction"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
-  <div class="card_behavior">
+</div>
+
+  <div class="card-behavior">
     <% @attractions.each do |attraction| %>
-      <div class="card"style="background-image: url('<%= cl_image_path attraction.photo.key, crop: :fill %>')"
-        <% if attraction.photo && attraction.photo.attached? %>
-        <% end %>>
+      <div class="card" style="background-image: url(<%= cl_image_path attraction.photo.key %>)">
         <div class="card-content">
           <h4 class="card-title"><%= attraction.name %></h4>
           <p class="card-body"><%= attraction.one_liner %></p>
@@ -24,5 +26,3 @@
       </div>
     <% end %>
   </div>
-
-</div>

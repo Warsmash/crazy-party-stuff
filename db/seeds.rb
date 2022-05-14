@@ -39,6 +39,21 @@ img = URI.open('https://ca.slack-edge.com/T02NE0241-U02TEDFTQSE-01f1581d081f-512
 kenza.photo.attach(io: img, filename: "kenza.jpg", content_type: 'image/jpg')
 kenza.save!
 
+sophiana = User.new(first_name: 'Sophiana', last_name: 'B', email: 'sophiana@partystuff.com', password: 'azerty')
+img = URI.open('https://ca.slack-edge.com/T02NE0241-U02U3AW8MJR-bdea51353b1e-512')
+sophiana.photo.attach(io: img, filename: "sophiana.jpg", content_type: 'image/jpg')
+sophiana.save!
+
+bruno = User.new(first_name: 'Bruno', last_name: 'Le Lay', email: 'bruno@partystuff.com', password: 'azerty')
+img = URI.open('https://ca.slack-edge.com/T02NE0241-U02UW1859ME-41c79280d179-512')
+bruno.photo.attach(io: img, filename: "bruno.jpg", content_type: 'image/jpg')
+bruno.save!
+
+aicha = User.new(first_name: 'Aicha', last_name: 'Diagne', email: 'aicha@partystuff.com', password: 'azerty')
+img = URI.open('https://ca.slack-edge.com/T02NE0241-U02TPH1HNK1-32225ca26924-512')
+aicha.photo.attach(io: img, filename: "aicha.jpg", content_type: 'image/jpg')
+aicha.save!
+
 # Attraction 1
 
 attraction = Attraction.new(
@@ -237,7 +252,7 @@ attraction = Attraction.new(
 
   one_liner: 'This is not a cruise',
   description: 'Friends + giant inflatable banana + high-speed boat: what could be better?
-                Works best on water but if you have grass around, we can adapt.'
+                Works best on water but if you have grass around, we can adapt.')
 
 
 img_url = 'https://images.unsplash.com/photo-1521289594125-e8e32a214a2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'

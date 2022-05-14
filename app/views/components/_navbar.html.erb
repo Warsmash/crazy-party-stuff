@@ -1,5 +1,4 @@
-<p><span class="crazy">Crazy</span> <span class="party">Party</span> <span class="stuff">Stuff</span></p>
-
+<!--<p><span class="crazy">Crazy</span> <span class="party">Party</span> <span class="stuff">Stuff</span></p>-->
 <div class="topnav">
 
   <div class="visitor-nav  d-flex justify-content-between">
@@ -35,15 +34,14 @@
           <img class="avatar dropbtn" src="https://www.pasrc.org/sites/g/files/toruqf431/files/styles/freeform_750w/public/2021-03/blank-profile-picture_0.jpg?itok=iSBmDxc8">
         <% end %>
         <div class="dropdown-content">
-          <a href="/conversations">Inbox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-          <a href="/user_bookings">My bookings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-          <a href="/my_attractions">My attractions&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a class="dropdown-option" href="/conversations">Inbox&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a class="dropdown-option" href="/user_bookings">My bookings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          <a class="dropdown-option" href="/my_attractions">My attractions&nbsp;&nbsp;&nbsp;&nbsp;</a>
           <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-logout"%>
         </div>
       </div>
 
     <% end %>
   </div>
-
 
 </div>

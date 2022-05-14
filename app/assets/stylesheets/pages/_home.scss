@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 // Specific CSS for your home-page
-*,
+
 *::before,
 *::after {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+
   font-weight: 400;
+
 }
 
 .banner {
@@ -122,13 +124,14 @@
   display: inline-block;
   text-decoration: none;
   color: #F4F4F4;
-  padding: 5.2em 3em;
-  border-radius: 12px;
+
+  padding: 0.2em 1.25em;
+  border-radius: 6px;
+
 
   background-color: #7970fe;
   box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
 
-}
 
 .button:hover,
 .button:focus {
