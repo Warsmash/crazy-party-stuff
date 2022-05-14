@@ -1,40 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
-.test-class p {
-  color: blue;
+.button-show{
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #F4F4F4;
+  padding: 0.2em 1.25em;
+  border-radius: 12px;
+
+  background-color: black;
 }
 
-.card-show {
-  color: #F4F4F4; /*couleur du text */
-  background-size: fill;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #F4F4F4;
-  width: 50ch;
-  height: 40ch;
-
-
-  justify-content: space-around;
-  margin: 0px 0px 0px 0px;
-  box-shadow: 0px 5px 20px #999;
-  img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    border-start-start-radius: 20px;
-  }
-}
-
-.card-behavior-show {
-  padding: 40px 70px 40px 70px; /* marge */
-  width: 100%;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  display: flex;
-  min-height: 10vh; /* emplacement de la card */
-  line-height: 1.6; /* + le chiffre augmente;+ les cards descendent*/
-  background: #F4F4F4; /*couleur du background => à mettre ds le body */
-  grid-row-gap: 40px;
-  font-family: 'Roboto', sans-serif;
-}
