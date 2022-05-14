@@ -16,25 +16,31 @@
   </div>
 </div>
 
+<div class="test-class">
 
-<p>
-  <%= @attraction.price %> € per day
-</p>
+  <p>
+    <%= @attraction.price %> € per day
+  </p>
 
-<p>
-  <%= @attraction.one_liner %>
-</p>
+  <p>
+    <%= @attraction.one_liner %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @attraction.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @attraction.description %>
+  </p>
+</div>
 
+<div class="card-behavior-show">
+  <div class="card-show">
 
-
-<% if @attraction.photo.attached? %>
-  <%= cl_image_tag @attraction.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+      <% if @attraction.photo.attached? %>
+      <%= cl_image_tag @attraction.photo.key%>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Back', attractions_path %>
 
@@ -57,12 +63,12 @@
 
 </div>
 
-<div id="reviews">
+<div id="reviews" style="text-align: center">
 <p>
  <%= pluralize @attraction.reviews.size, "review" %>
 </p>
   <% if @attraction.reviews.blank? %>
-    Be the first to leave a review for <%= @attraction.name %>
+    Be the first to leave a review for ✨<%= @attraction.name %>✨!
   <% else %>
     <% @attraction.reviews.each do |review| %>
       <p><%= review.content %></p>

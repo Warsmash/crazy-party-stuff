@@ -5,7 +5,7 @@
 *::after {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  font-weight: 900;
+  font-weight: 400;
 }
 
 .banner {
@@ -57,6 +57,7 @@
   flex: 1 1 auto;
   padding: 0.1rem;
   font-size: 18px;
+  font-weight: bold;
 }
 
 
@@ -99,7 +100,7 @@
 .card:hover .card-title::after,
 .card:focus-within .card-title::after {
   transform: scaleX(0.5);
-  transition: transform  500ms ease;
+  transition: transform  250ms ease;
 }
 
 /* BUTTON*/
@@ -110,7 +111,9 @@
   color: #F4F4F4;
   padding: 0.2em 1.25em;
   border-radius: 12px;
-  transform-origin: left;
+
+  background-color: #7970fe;
+  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
 
 }
 
@@ -119,20 +122,20 @@
   display: inline-block;
   text-decoration: none;
   color: #F4F4F4;
-  padding: 0.2em 1.25em;
+  padding: 5.2em 3em;
   border-radius: 12px;
 
   background-color: #7970fe;
   box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
 
-
 }
 
 .button:hover,
 .button:focus {
-  background-color: #7970fe;
-  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
+  background-color: #8774b5f7;
+  box-shadow: 0 0 5px #8774b5f7, 0 0 25px #8774b5f7, 0 0 50px #8774b5f7, 0 0 200px #8774b5f7;
   transform-origin: left;
+  color: #F4F4F4;
 }
 
 
@@ -172,7 +175,7 @@
 @media (hover) {
   .card-content {
     transform: translateY(145%); /*Up and Down like a rollerCoaster */
-    transition: transform  500ms ease;
+    transition: transform  250ms ease;
 
 
   }
@@ -181,22 +184,22 @@
   .card:hover .card-content,
   .card:focus-within .card-content {
     transform: translateY(0);
-    transition-delay: 500ms;
+    transition-delay: 250ms;
 
   }
 
   /* fix glitch  => Firefox*/
   .card:focus-within .card-content {
-    transition-duration: 500ms;
+    transition-duration: 250ms;
 
   }
 
   .card-content > *:not(.card-title) {
-    transition: opacity 500ms linear;
+    transition: opacity 2500ms linear;
   }
 
   .card:hover .card-content > *:not(.card-title) {
-    transition-delay: 1000ms;
+    transition-delay: 250ms;
   }
 
   .card-title::after{
