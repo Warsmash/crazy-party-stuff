@@ -3,7 +3,7 @@ import { csrfToken } from "@rails/ujs"
 
 
 export default class extends Controller {
-  static targets = ["items", "form"]
+  static targets = ["items", "form", 'paragraph']
 
   send(event) {
     event.preventDefault()
@@ -17,8 +17,8 @@ export default class extends Controller {
     .then((data) => {
       console.log(data)
       if (data.inserted_item) {
-        if (document.querySelector(".comment")) {
-          document.querySelector(".comment").remove()
+        if (this.hasParagraphTarget) {
+          this.paragraphTarget.remove()
         }
         this.itemsTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
       }

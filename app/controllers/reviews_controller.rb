@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @review.attraction = @attraction
     authorize @review
     respond_to do |format|
-      if @review.save!
+      if @review.save
         format.html {redirect_to attraction_path(@attraction,
         anchor: "review-#{@review.id}") }
         format.json
