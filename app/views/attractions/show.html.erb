@@ -1,68 +1,38 @@
-<div class="main-container">
-  <p id="notice"><%= notice %></p>
+<div class="container my-5">
 
-<div class="d-flex justify-content-between">
-  <div>
-    <strong><%= @attraction.name %></strong>
-  </div>
-
-  <div>
-    <span class='mx-1'>Owner: <%= @attraction.user.first_name %></span>
-    <% if @attraction.user.photo.attached? %>
-      <img class="avatar mx-1" src="<%= @attraction.user.photo.url %>">
-    <% else %>
-      <img class="avatar mx-1" src="https://www.pasrc.org/sites/g/files/toruqf431/files/styles/freeform_750w/public/2021-03/blank-profile-picture_0.jpg?itok=iSBmDxc8">
+  <div class="d-flex justify-content-between w-100 mb-3">
+    <% if @attraction.photo.attached? %>
+      <%= cl_image_tag @attraction.photo.key, height: 300, width: 400, crop: :fill, class:"attracpic" %>
     <% end %>
-    <% unless current_user.nil? %>
-      <div><%= link_to "Send a message", conversations_path(sender_id: current_user.id, recipient_id: @attraction.user.id), method: 'post'%></div>
-    <% end %>
-  </div>
-</div>
 
-<div class="test-class">
+  <div class="text-end ps-5">
 
-  <p>
-    <%= @attraction.price %> € per day
-  </p>
+      <h2 class="attracname">
+        <%= @attraction.name %>
+      </h2>
+      <h3>
+        <%= @attraction.one_liner %>
+      </h3>
+      <p>
+        <%= @attraction.description %>
+      </p>
 
-  <p>
-    <%= @attraction.one_liner %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @attraction.description %>
-  </p>
-</div>
-
-<div class="card-behavior-show">
-  <div class="card-show">
-
-      <% if @attraction.photo.attached? %>
-      <%= cl_image_tag @attraction.photo.key%>
-      <% end %>
+      <div class="cost">
+        <strong><%= @attraction.price %> €</strong>
+      </div>
+      <div class="design-date">
+        <%= simple_form_for [ @attraction, @booking ] do |f| %>
+          <%# <%= f.input :start_date, class: 'datepicker' %>
+          <%= f.input :start_date, input_html: { class: "datepicker"}, label: 'Start Date', placeholder: "#{Date.today}", required: true %>
+          <%= f.input :end_date, input_html: { class: "datepicker"}, label: 'End Date', placeholder: "#{Date.today}", required: true %>
+          <%= f.submit "Book", class: "button-show" %>
+          <%= link_to 'Back', attractions_path, class: 'button-show' %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-
-<%= link_to 'Back', attractions_path %>
 
 
-<!-- classic link_to -->
-<%# <%= link_to "Our Cocktails", cocktails_path %>
-
-<!-- link_to with custom HTML -->
-<%# <%= link_to cocktail_path(@cocktail) do %>
-  <%# <img src="cocktails.jpg" alt="Our cocktails" />
-<% end %>
-
-
-  <%= simple_form_for [ @attraction, @booking ] do |f| %>
-    <%# <%= f.input :start_date, class: 'datepicker' %>
-    <%= f.input :start_date, input_html: { class: "datepicker"}, label: 'Start Date', placeholder: "#{Date.today}", required: true %>
-    <%= f.input :end_date, input_html: { class: "datepicker"}, label: 'End Date', placeholder: "#{Date.today}", required: true %>
-    <%= f.submit "Book", class: "btn btn-primary" %>
-<% end %>
 
 </div>
 <%# <div data-controller="insert-in-list">
@@ -74,16 +44,18 @@
     <!-- [...] -->
   <%# <% end %>
 </div>
-<div id="reviews" data-controller="insert-in-list">
+<div class="container" id="reviews" data-controller="insert-in-list">
   <div data-insert-in-list-target="items">
 
   <% if @attraction.reviews.blank? %>
-    Be the first to leave a review for ✨<%= @attraction.name %>✨!
+    <p class='comment'> Be the first to leave a review for ✨<%= @attraction.name %>✨! </p>
   <% else %>
-    <% @attraction.reviews.each do |review| %>
-      <p id="review-<%= review.id %>"><%= review.content %></p>
+  <h3>The reviews</h3>
+  <ul>
+  <% @attraction.reviews.each do |review| %>
+   <li><%=  review.content %></li>
     <% end %>
   <% end %>
+  </ul>
   </div>
-    <%= render "review_form", review: @review %>
 </div>
