@@ -23,6 +23,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 58px;
 }
 
 .topnav a {
@@ -33,7 +34,7 @@ a {
   padding: 12px 16px;
   text-decoration: none;
   font-size: 16px;
-  font-weight: bolder;
+  font-weight: medium;
   border-radius: 6px; // Ajout par kenza -- conccordance avec les Buttons
   margin: 5px; // ajout Kenza
 }
