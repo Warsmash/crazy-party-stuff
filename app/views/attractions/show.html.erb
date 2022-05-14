@@ -71,16 +71,20 @@
     <!-- [...] -->
   <%# <% end %>
 </div>
-<div id="reviews" data-controller="insert-in-list">
+<div class="container" id="reviews" data-controller="insert-in-list">
   <div data-insert-in-list-target="items">
 
   <% if @attraction.reviews.blank? %>
-    Be the first to leave a review for ✨<%= @attraction.name %>✨!
+    <p class='comment'> Be the first to leave a review for ✨<%= @attraction.name %>✨! </p>
   <% else %>
-    <% @attraction.reviews.each do |review| %>
-      <p id="review-<%= review.id %>"><%= review.content %></p>
+  <h3>The reviews</h3>
+  <ul>
+  <% @attraction.reviews.each do |review| %>
+   <li><%=  review.content %></li>
     <% end %>
   <% end %>
+  </ul>
+
   </div>
     <%= render "review_form", review: @review %>
 </div>
