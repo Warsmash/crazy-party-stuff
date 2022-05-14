@@ -111,12 +111,10 @@
   display: inline-block;
   text-decoration: none;
   color: #F4F4F4;
-  padding: 0.2em 1.25em;
+  padding: 8px;
   border-radius: 12px;
-
   background-color: #7970fe;
-  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
-
+  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 50px #7970fe;
 }
 
 .button-attractions {
@@ -124,13 +122,10 @@
   display: inline-block;
   text-decoration: none;
   color: #F4F4F4;
-
-  padding: 0.2em 1.25em;
+  padding: 4px;
   border-radius: 6px;
-
-
   background-color: #7970fe;
-  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
+  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 50px #7970fe;}
 
 
 .button:hover,
