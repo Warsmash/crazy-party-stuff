@@ -17,6 +17,9 @@ export default class extends Controller {
     .then((data) => {
       console.log(data)
       if (data.inserted_item) {
+        if (document.querySelector(".comment")) {
+          document.querySelector(".comment").remove()
+        }
         this.itemsTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
       }
       this.formTarget.outerHTML = data.form
