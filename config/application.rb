@@ -23,5 +23,7 @@ module CrazyPartyStuff
     #
     config.time_zone = "Europe/Paris"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
+
 end
