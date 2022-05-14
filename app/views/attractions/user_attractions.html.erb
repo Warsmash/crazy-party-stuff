@@ -1,23 +1,32 @@
-<h1>My party attractions</h1>
-<%= link_to "Create a party attraction", new_attraction_path %>
-<% if flash[:alert] %>
-  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
-  <span><strong>Yaii!</strong> 🎉 <%= flash[:alert] %></span>
-    <a data-bs-dismiss="alert" aria-label="Close">
-      <i class="fas fa-times"></i>
-    </a>
-  </div>
-<% end %>
-<div class="card-behavior">
+<div class="container">
+  <h1>My party attractions</h1>
+  <%= link_to "Add attraction to rent", new_attraction_path, class: "btn btn-primary my-2" %>
+  <% if flash[:alert] %>
+    <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><strong>Yaii!</strong> 🎉 <%= flash[:alert] %></span>
+      <a data-bs-dismiss="alert" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </a>
+    </div>
+  <% end %>
+
+  <div class="card-behavior-my-attractions">
     <% @user_attractions.each do |attraction| %>
         <%  photo = attraction.photo && attraction.photo.key  ? attraction.photo.key : '' %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo, crop: :fill %>')">
-          <h3> <%= link_to attraction.name, attraction_path(attraction) %> </h3>
-          <p> <%= attraction.one_liner %> </p>
-          <p> <%= attraction.price %> € per day</p>
+        <div class="card mx-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo, crop: :fill %>')">
+          <div class="d-flex flex-column mx-3 text-white font-weight-bold">
+            <h3> <%= attraction.name %> </h3>
+            <p> <%= attraction.price %> € per day</p>
+            <%= link_to 'View details', attraction_path(attraction), class: "link-warning text-white text-decoration-underline" %>
+          </div>
 
-          <%= link_to "Edit", edit_attraction_path(attraction), class: 'button'%>
-          <%= link_to "Delete", attraction_path(attraction), method: :delete %>
+          <div class="d-flex justify-content-end">
+            <%= link_to "Edit", edit_attraction_path(attraction), class: 'btn btn-primary mx-1'%>
+            <%= link_to "Delete", attraction_path(attraction), method: :delete, class: 'btn btn-secondary mx-1' %>
+          </div>
+
         </div>
     <% end %>
+  </div>
+
 </div>

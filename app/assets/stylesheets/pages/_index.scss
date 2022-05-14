@@ -38,6 +38,19 @@ h1 {
   font-family: 'Roboto', sans-serif;
 }
 
+.card-behavior-my-attractions {
+  margin: 16px 0;
+  width: 100%;
+  justify-content: start;
+  flex-wrap: wrap;
+  display: flex;
+  min-height: 10vh; /* emplacement de la card */
+  line-height: 1.6; /* + le chiffre augmente;+ les cards descendent*/
+  background: #F4F4F4; /*couleur du background => à mettre ds le body */
+  grid-row-gap: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
 
 .card {
   color: #F4F4F4; /*couleur du text */
