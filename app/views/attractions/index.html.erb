@@ -2,13 +2,16 @@
   <h1>Party attractions</h1>
 
     <%= form_tag attractions_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your attraction"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+    <div class="d-flex search-bar">
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find your attraction"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
 </div>
 
   <div class="card-behavior">
