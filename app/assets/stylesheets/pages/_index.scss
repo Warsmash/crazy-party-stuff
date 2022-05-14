@@ -24,6 +24,7 @@ h1 {
   background: linear-gradient(to left, transparent, rgb(5, 5, 0));
   padding: 250px;
   box-shadow: 0px 5px 20px #999;
+  height: 100vh;
 }
 
 
@@ -147,10 +148,10 @@ h1 {
   display: inline-block;
   text-decoration: none;
   color: #F4F4F4;
-  padding: 1.3em 3em;
+  padding: 16px 24px;
   border-radius: 12px;
   background-color: #7970fe;
-  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe, 0 0 50px #7970fe, 0 0 200px #7970fe;
+  box-shadow: 0 0 5px #7970fe, 0 0 25px #7970fe;
   transform-origin: left;
 }
 
