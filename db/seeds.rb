@@ -177,7 +177,7 @@ attraction.save!
 # Attraction 8
 
 attraction = Attraction.new(
-  name: 'Escape Game - Chatelet Edition',
+  name: 'Escape Game',
   price: 25,
   one_liner: 'Will you be able to find the right exit?',
   description: 'You only have 50 minutes to exit this maze.
