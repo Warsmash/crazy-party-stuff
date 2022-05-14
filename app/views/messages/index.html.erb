@@ -1,42 +1,45 @@
-<div class="container-messages">
-  <% recipient = Conversation.find(params[:conversation_id]).recipient %>
-  <% sender = Conversation.find(params[:conversation_id]).sender %>
-  <h1>Chat with
-  <%= sender.first_name if current_user == recipient %>
-  <%= recipient.first_name if current_user == sender %></h1>
-  <% if @over_ten %>
-  <%= link_to 'Show Previous', '?m=all' %>
-  <% end %>
-  <div class="ui segment">
-  <% @messages.each do |message| %>
-    <% if message.body %>
-    <% user = User.find(message.user_id) %>
-    <div class="item-message d-flex">
-      <% if user.photo.attached? %>
-        <img class="avatar mx-2" src="<%= user.photo.url %>">
-      <% else %>
-        <img class="avatar mx-2" src="https://www.pasrc.org/sites/g/files/toruqf431/files/styles/freeform_750w/public/2021-03/blank-profile-picture_0.jpg?itok=iSBmDxc8">
-      <% end %>
-      <div class="content">
-      <div class="header"><span class="user-name"><%= user.first_name %></span> <span class="message-date"><%= message.message_time %></span></div>
-        <div class="list">
-        <div class="item">
-          <i class="right triangle icon"></i>
-          <%= message.body %>
+
+  <div class="main-container container-messages">
+    <% recipient = Conversation.find(params[:conversation_id]).recipient %>
+    <% sender = Conversation.find(params[:conversation_id]).sender %>
+    <h1>Chat with
+    <%= sender.first_name if current_user == recipient %>
+    <%= recipient.first_name if current_user == sender %></h1>
+    <% if @over_ten %>
+    <%= link_to 'Show Previous', '?m=all' %>
+    <% end %>
+    <div class="ui segment">
+    <% @messages.each do |message| %>
+      <% if message.body %>
+      <% user = User.find(message.user_id) %>
+      <div class="item-message d-flex">
+        <% if user.photo.attached? %>
+          <img class="avatar mx-2" src="<%= user.photo.url %>">
+        <% else %>
+          <img class="avatar mx-2" src="https://www.pasrc.org/sites/g/files/toruqf431/files/styles/freeform_750w/public/2021-03/blank-profile-picture_0.jpg?itok=iSBmDxc8">
+        <% end %>
+        <div class="content">
+        <div class="header"><span class="user-name"><%= user.first_name %></span> <span class="message-date"><%= message.message_time %></span></div>
+          <div class="list">
+          <div class="item">
+            <i class="right triangle icon"></i>
+            <%= message.body %>
+          </div>
         </div>
       </div>
     </div>
+    <% end %>
+    <% end %>
+    </div>
+    <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+    <div class="field">
+      <%= f.text_area :body, class: "form-control", placeholder: "Type here..." %>
+    </div>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+    <div>
+      <%= f.submit "Send", class: "btn btn-primary send-message-button" %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-  <% end %>
-  </div>
-  <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control", placeholder: "Type here..." %>
-  </div>
-  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-  <div>
-    <%= f.submit "Send", class: "btn btn-primary send-message-button" %>
-  </div>
-  <% end %>
+
 </div>
