@@ -7,7 +7,7 @@ class AttractionsController < ApplicationController
       sql_query = "name ILIKE :query OR one_liner ILIKE :query OR description ILIKE:query"
       @attractions = policy_scope(Attraction).where(sql_query, query: "%#{params[:query]}%")
     else
-      @attractions = policy_scope(Attraction).order(created_at: :desc)
+      @attractions = policy_scope(Attraction).order(created_at: :asc)
     end
   end
 
