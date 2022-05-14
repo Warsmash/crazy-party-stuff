@@ -1,37 +1,25 @@
-<div class="main-container">
 
-<h1 class="attractitle">My bookings</h1>
-<div class="book">
-
-
-
-  <% @bookings.each do |booking|%>
-
-
-
-  <div class="d-flex justify-content-between w-100 mb-3">
-    <% if booking.attraction.photo.attached? %>
-      <%= cl_image_tag booking.attraction.photo.key, height: 300, width: 400, crop: :fill, class:"attracpic" %>
+<div class="container">
+  <h1 class="attractitle">My bookings</h1>
+  <div class="book">
+    <% @bookings.order(created_at: :desc).each do |booking|%>
+      <div class="d-flex justify-content-between w-100 mb-3">
+        <% if booking.attraction.photo.attached? %>
+          <%= cl_image_tag booking.attraction.photo.key, height: 300, width: 400, crop: :fill, class:"attracpic" %>
+        <% end %>
+        <div class="text-end ps-5">
+          <h2 class="attracname">
+            <%= booking.attraction.name %>
+          </h2>
+          <div class="date">
+            <th>From <strong><%= booking.start_date %></th></strong>
+            <th>to <strong><%= booking.end_date %></th></strong>
+          </div>
+          <div class="cost">
+            Total price: <strong><%= ((booking.end_date - booking.start_date) * booking.attraction.price).round %> €</strong>
+          </div>
+        </div>
+      </div>
     <% end %>
-
-  <div class="text-end ps-5">
-
-      <h2 class="attracname">
-        <%= booking.attraction.name %>
-      </h2>
-
-      <div class="date">
-        <th>From <strong><%= booking.start_date %></th></strong>
-        <th>to <strong><%= booking.end_date %></th></strong>
-      </div>
-      <div class="cost">
-        Total price: <strong><%= ((booking.end_date - booking.start_date) * booking.attraction.price).round %> €</strong>
-      </div>
-    </div>
   </div>
-
-  <% end %>
-</div>
-
-<h2 class="pb">Past bookings: <%= @past_bookings%></h2>
 </div>
