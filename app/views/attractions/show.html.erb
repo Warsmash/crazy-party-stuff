@@ -48,18 +48,18 @@
   <%# <% end %>
 </div>
 <div class="container" id="reviews" data-controller="insert-in-list">
-  <div data-insert-in-list-target="items">
-
-  <% if @attraction.reviews.blank? %>
-    <p class='comment'> Be the first to leave a review for ✨<%= @attraction.name %>✨! </p>
-  <% else %>
   <h3>The reviews</h3>
-  <ul>
-  <% @attraction.reviews.each do |review| %>
-   <li><%=  review.content %></li>
+  <div>
+
+    <%= render "review_form", review: @review  %>
+    <ul data-insert-in-list-target="items">
+    <% if @attraction.reviews.blank? %>
+      <li class='comment' data-insert-in-list-target="paragraph"> Be the first to leave a review for ✨<%= @attraction.name %>✨! </li>
+    <% else %>
+      <% @attraction.reviews.each do |review| %>
+        <li><%=  review.content %></li>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= render "review_form"  %>
-  </ul>
+    </ul>
   </div>
 </div>
